@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.48.0",
+    "axios": "^1.7.2",
     "babel-plugin-react-compiler": "^0.0.0-experimental-696af53-20240625",
     "react": "npm:react@rc",
     "react-dom": "npm:react-dom@rc",

@@ -1,17 +1,35 @@
-import { useNavigate } from "react-router-dom";
+import TodoList from "@/components/TodoList";
+import { ChangeEvent, useState } from "react";
+import styled from "styled-components";
 
 const HomePage = () => {
-  const navigate = useNavigate();
+  const [value, setValue] = useState("");
 
-  const handleClick = () => {
-    navigate("/test");
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
   };
+
   return (
-    <div>
-      <h1>Home page</h1>
-      <button onClick={handleClick}>버튼</button>
-    </div>
+    <Wrapper>
+      <Input value={value} onChange={handleChange} />
+      <TodoList />
+    </Wrapper>
   );
 };
 
 export default HomePage;
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  width: 80%;
+  height: 60px;
+  padding: 20px;
+  margin: 20px;
+`;
